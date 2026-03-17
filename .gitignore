@@ -7,6 +7,7 @@
 !/AGENTS.md
 !/AGENTS.md.bak
 !/README.md
+!/config.toml
 !/config.example.toml
 !/rules/
 !/rules/*.rules

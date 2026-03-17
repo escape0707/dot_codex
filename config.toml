@@ -1,0 +1,43 @@
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+web_search = "live"
+sandbox_mode = "workspace-write"
+# approval_policy = "untrusted"
+
+[sandbox_workspace_write]
+network_access = true
+writable_roots = [
+    "~/.cache/gh",
+    "~/.cache/ms-playwright",
+    "~/.cache/pnpm",
+    "~/.cache/uv",
+    "~/.config/gws",
+    "~/.local/share/pnpm",
+    "~/.npm/_cacache/tmp",
+    "~/.texlive/texmf-var",
+    "~/.cache/chromium",
+    "~/.config/chromium",
+#    "C:\\Users\\jay\\AppData\\Local\\uv\\cache",
+#    "C:\\Users\\jay\\AppData\\Local\\fnm_multishells",
+]
+# exclude_tmpdir_env_var = true
+# exclude_slash_tmp = true
+
+[windows]
+sandbox = "elevated"
+
+[projects."/home/jay/workspaces/md/career-kit"]
+trust_level = "trusted"
+
+[projects."/home/jay/workspaces/ts/telegram-summary-bot"]
+trust_level = "trusted"
+
+[projects."/home/jay/workspaces/codex/codex-migration"]
+trust_level = "trusted"
+
+[projects."/home/jay/workspaces/codex/codex-temp-home"]
+trust_level = "trusted"
+
+[projects."/home/jay/workspaces/codex"]
+trust_level = "trusted"
