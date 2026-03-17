@@ -1,0 +1,26 @@
+# Copy this file to config.toml locally and keep secrets only in that local file.
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+web_search = "live"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true
+writable_roots = [
+    "~/.cache/uv",
+    "~/.cache/ms-playwright",
+    "~/.config/gws",
+    "~/.texlive2025/texmf-var",
+]
+
+[mcp_servers.context7]
+enabled = true
+command = "context7-mcp"
+args = ["--api-key", "YOUR_CONTEXT7_API_KEY"]
+
+# [mcp_servers.context7.env]
+# MCP env values are literal strings; use absolute paths here.
+# PATH = "/absolute/path/to/pnpm:/absolute/path/to/fnm/bin:/usr/bin:/bin"
+
+# Add per-machine [projects."..."] trust entries in your local config.toml only.

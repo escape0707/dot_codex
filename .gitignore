@@ -1,0 +1,12 @@
+#
+# Ignore everything by default, then opt in only the shareable Codex config.
+#
+*
+
+!/.gitignore
+!/AGENTS.md
+!/AGENTS.md.bak
+!/README.md
+!/config.example.toml
+!/rules/
+!/rules/*.rules

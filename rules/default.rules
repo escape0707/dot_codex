@@ -1,0 +1,44 @@
+# Prompt before common mutative git operations.
+prefix_rule(
+    pattern = ["git", ["add", "am", "apply", "checkout", "cherry-pick", "clean", "commit", "fetch", "merge", "mv", "pull", "push", "rebase", "reset", "restore", "revert", "rm", "stash", "switch"]],
+    decision = "prompt",
+)
+
+# These subcommands mix read-only and mutating forms, so err on prompting.
+# prefix_rule(
+#     pattern = ["git", ["branch", "tag", "worktree"]],
+#     decision = "prompt",
+# )
+
+# Never let Codex send mail.
+prefix_rule(
+    pattern = ["gws", "gmail", ["+send", "+reply", "+reply-all", "+forward"]],
+    decision = "forbidden",
+    justification = "Do not send mail automatically. Create or update a draft instead.",
+)
+
+prefix_rule(
+    pattern = ["gws", "gmail", "users", "messages", "send"],
+    decision = "forbidden",
+    justification = "Do not send mail automatically. Create or update a draft instead.",
+)
+
+prefix_rule(
+    pattern = ["gws", "gmail", "users", "drafts", "send"],
+    decision = "forbidden",
+    justification = "Drafts may be created, but never sent by Codex.",
+)
+
+# Prefer pnpm for Node package manager and CLI execution.
+prefix_rule(
+    pattern = [["npm", "npx", "pnpx", "yarn", "yarnpkg", "bun", "bunx"]],
+    decision = "forbidden",
+    justification = "Use pnpm instead: pnpm run <script>, pnpm exec <tool>, pnpm dlx <pkg>, or the matching pnpm install/add/remove/update command.",
+)
+
+# Allow running tests based on CloudFlare workers
+prefix_rule(
+    pattern = ["pnpm", "run", "test:workers"],
+    decision = "allow"
+)
+prefix_rule(pattern=["C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-Command", "Get-AppxPackage OpenAI.Codex | Select-Object Name,PackageFullName,Version,InstallLocation,InstallDate,Publisher | ConvertTo-Json -Depth 4"], decision="allow")

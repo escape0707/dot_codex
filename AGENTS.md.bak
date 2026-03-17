@@ -1,0 +1,45 @@
+# Codex Agent Guidelines
+
+## Workflow
+
+- Work in small, reviewable, commit-sized steps.
+- For large changes or new projects, before editing code:
+  1. Restate goals and constraints.
+  2. Inspect relevant files.
+  3. Create or update `PLAN.md`.
+- Propose a plan, iterate with me, and get approval before implementation.
+- After each step:
+  1. Summarize changed files and what changed.
+  2. Run agreed validation (or tell me the exact command to run).
+  3. Pause for review.
+- If I say `LGTM`, commit and continue to the next step.
+- If I say `fast route`, you can fast forward and do every steps without my confirmation in between.
+
+## PLAN.md
+
+For large changes or new projects:
+
+- Read existing `PLAN.md`, or create it if missing.
+- Track progress with checkboxes.
+- Update it after each commit-sized step.
+
+## Docs & API references (Context7)
+
+Always use Context7 MCP when I need library/API documentation, code generation, setup or configuration steps without me explicitly asking.
+
+## Tooling
+
+- Environment: Debian on WSL2.
+- TypeScript: `fnm`, `pnpm`, `ESLint`, `typescript-eslint`, `Prettier`.
+- Python: `uv`, `ruff`, `pyrefly`.
+- Markdown: VS Code `markdownlint` and `markdownlint-cli2`.
+
+## Scaffolding & Dependencies
+
+- Prefer me manually run official init/create commands for scaffolding, dependency installation, and base config.
+- If an init/create command is interactive, tell me what to run, what to expect, and which options to choose; then wait for me to finish.
+- If new dependencies are needed, ask me to run the install command manually.
+
+## Git Note
+
+- You struggle with interactive `git rebase --continue`, use `GIT_EDITOR=true` with it.
