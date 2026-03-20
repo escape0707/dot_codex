@@ -41,3 +41,10 @@ trust_level = "trusted"
 
 [projects."/home/jay/workspaces/codex"]
 trust_level = "trusted"
+
+[projects."/home/jay/workspaces/codex/playground"]
+trust_level = "trusted"
+
+[[skills.config]]
+path = 'C:\Users\jay\.codex\skills\.system\skill-installer\SKILL.md'
+enabled = false

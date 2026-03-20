@@ -41,4 +41,3 @@ prefix_rule(
     pattern = ["pnpm", "run", "test:workers"],
     decision = "allow"
 )
-prefix_rule(pattern=["C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-Command", "Get-AppxPackage OpenAI.Codex | Select-Object Name,PackageFullName,Version,InstallLocation,InstallDate,Publisher | ConvertTo-Json -Depth 4"], decision="allow")
